@@ -1,0 +1,13 @@
+name: Sample Workflow
+
+on: [push]
+
+jobs:
+  custom_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: With environment variables
+        run: echo "GHA_ENVIRONMENT=Development" >> $GITHUB_ENV
+        
+      - name: Print variable
+        run: echo $GHA_ENVIRONMENT
